@@ -1,0 +1,29 @@
+{
+  "name": "parseExcel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parseExcel.js",
+  "bin": "parseExcel.js",
+  "engines": {
+    "npm": "10.2.4",
+    "node": "20.11.0"
+  },
+  "scripts": {
+    "build": "pkg . --out-dir dist && node replaceIcon.js"
+  },
+  "pkg": {
+    "targets": [
+      "node18-linux-x64",
+      "node18-win-x64",
+      "node18-macos-x64"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "rcedit": "^4.0.1"
+  }
+}
