@@ -1,0 +1,83 @@
+Excel Modifier Tool
+Descrição
+O Excel Modifier Tool é uma ferramenta CLI (Command Line Interface) desenvolvida em Node.js para modificar planilhas Excel (.xlsx) de forma dinâmica. Ela permite que os usuários apliquem operações aritméticas (+, -, *, /) em células específicas de várias planilhas dentro de um arquivo Excel, e salva o resultado em um novo arquivo Excel.
+
+Funcionalidades
+Leitura de arquivos Excel (.xlsx) existentes.
+Aplicação de operações aritméticas em células específicas de planilhas.
+Suporte para múltiplas planilhas no mesmo arquivo.
+Remoção de proteção e desbloqueio de todas as células para permitir edições posteriores.
+Salvamento do arquivo modificado em um novo arquivo Excel.
+Pré-requisitos
+Node.js (versão 12 ou superior)
+NPM (Node Package Manager)
+Instalação
+Clone este repositório:
+
+bash
+Copiar código
+git clone https://github.com/seu-usuario/excel-modifier-tool.git
+Navegue até o diretório do projeto:
+
+bash
+Copiar código
+cd excel-modifier-tool
+Instale as dependências necessárias:
+
+bash
+Copiar código
+npm install
+Como Usar
+Iniciar a Ferramenta:
+
+No terminal, execute o script principal:
+
+bash
+Copiar código
+node index.js
+Forneça o Nome do Arquivo de Entrada:
+
+Quando solicitado, insira o nome do arquivo Excel que deseja modificar (sem a extensão .xlsx). Certifique-se de que o arquivo esteja no mesmo diretório do script.
+Forneça o Nome do Arquivo de Saída:
+
+Insira o nome desejado para o arquivo modificado (sem a extensão .xlsx). O arquivo será salvo no mesmo diretório.
+Digite as Operações Desejadas:
+
+O programa solicitará que você insira um operador aritmético (+, -, *, /). Após selecionar o operador, você deve fornecer o número desejado.
+Continue adicionando operações até estar satisfeito, e então digite sair para aplicar as operações e salvar o arquivo modificado.
+Verifique o Arquivo de Saída:
+
+O arquivo modificado estará no diretório do projeto com o nome que você especificou.
+Exemplo de Uso
+java
+Copiar código
+Digite o nome do arquivo de entrada (sem extensão .xlsx): meu-arquivo
+Arquivo encontrado: meu-arquivo.xlsx
+
+Digite o nome desejado para o arquivo de saída (sem extensão .xlsx): meu-arquivo-modificado
+
+Digite o operador desejado (+, -, *, /) ou "sair" para encerrar: +
+Digite o número desejado: 10
+
+Digite o operador desejado (+, -, *, /) ou "sair" para encerrar: *
+Digite o número desejado: 2
+
+Digite o operador desejado (+, -, *, /) ou "sair" para encerrar: sair
+
+Aplicando operação: [ '+', 10, '*', 2 ]
+Modificando a planilha: Sheet1
+Célula de valor 5 modificada para: 30
+Célula de valor 10 modificada para: 40
+...
+
+Arquivo salvo com sucesso como "meu-arquivo-modificado.xlsx".
+Saindo...
+Dependências
+ExcelJS - Biblioteca para manipulação de arquivos Excel em Node.js.
+Readline - Módulo Node.js para leitura de linha de comando.
+fs (File System) - Módulo Node.js para manipulação de arquivos.
+Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
+
+Licença
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE para obter detalhes.
