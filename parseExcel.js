@@ -52,6 +52,19 @@ async function modifyExcel() {
     // Liste os nomes das planilhas disponíveis
     const sheetNames = workbook.worksheets.map(sheet => sheet.name);
 
+    // Desbloquear todas as células da planilha MENU
+    const menuSheet = workbook.getWorksheet('MENU');
+    if (menuSheet) {
+        console.log('Desbloqueando todas as células da planilha: MENU');
+        menuSheet.eachRow((row, rowIndex) => {
+            row.eachCell((cell, colNumber) => {
+                cell.protection = { locked: false, hidden: false };
+            });
+        });
+        console.log('Todas as células da planilha MENU foram desbloqueadas.');
+    }
+
+    // Resto do código...
     let operation;
     let actualQuestion = 0;
     let question = ['Digite o operador desejado (+, -, *, /) ou "sair" para encerrar: ', 'Digite o número desejado: '];
