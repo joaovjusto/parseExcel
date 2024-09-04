@@ -70,6 +70,8 @@ async function modifyExcel() {
         if (operation === 'sair') {
             console.log('Aplicando operação:', workFunction);
 
+            const firstSheetName = workbook.worksheets[0].name; // Nome da primeira planilha
+
             for (const sheetName of sheetNames) {
                 if (sheetName !== 'MENU') {
                     console.log('Modificando a planilha:', sheetName);
@@ -90,6 +92,21 @@ async function modifyExcel() {
                                 cell.protection = { locked: false, hidden: false };
                             });
                         });
+
+                        // Adicionar hiperlink na célula D7
+                        const linkCell = sheet.getCell('D7');
+                        linkCell.value = { text: "VOLTAR", hyperlink: `#'${firstSheetName}'!A1` };
+                        linkCell.style = { font: { bold: true, color: { argb: 'ffffffff' }, underline: false, } };
+                        linkCell.protection = { locked: false, hidden: false };
+                        linkCell.alignment = { vertical: 'middle', horizontal: 'center' };
+                        linkCell.fill = {
+                            type: 'pattern',
+                            pattern:'solid',
+                            fgColor:{argb:'D91919'},
+                          };
+                        linkCell.border = { top: { style: 'thin' }, left: { style: 'thin' }, bottom: { style: 'thin' }, right: { style: 'thin' } };
+
+                        console.log(`Hiperlink adicionado em ${sheet.name} na célula E7 para ${firstSheetName}.`);
 
                         let rowIndex = 11; // Começa na linha 11
                         const column = 'C'; // Coluna C
@@ -120,6 +137,7 @@ async function modifyExcel() {
                     }
                 }
             }
+
 
             // Salve as alterações em um novo arquivo
             await workbook.xlsx.writeFile(`./${outputFileName}.xlsx`);
