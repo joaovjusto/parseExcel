@@ -2,8 +2,8 @@
   "name": "parseExcel",
   "version": "1.0.0",
   "description": "",
-  "main": "parseExcel.js",
-  "bin": "parseExcel.js",
+  "main": "index.js",
+  "bin": "index.js",
   "engines": {
     "npm": "10.2.4",
     "node": "20.11.0"
